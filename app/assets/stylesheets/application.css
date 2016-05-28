@@ -18,7 +18,7 @@
 @import "bootstrap";
 
 body {
-  background-color: rgb(245, 192, 102);
+  background-color: rgb(244, 205, 140);
   color: rgb(21, 82, 101);
   padding: 10px;
 }
@@ -29,7 +29,7 @@ h1 {
 }
 
 h2 {
-  font: 300 40px/1.2 'Bree Serif', Georgia, serif;
+  font: 300 30px/1.2 'Bree Serif', Georgia, serif;
 }
 
 p {
