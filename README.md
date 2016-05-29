@@ -1,4 +1,5 @@
-# README
+# RHousehold
+[![Build Status](https://travis-ci.org/matobet/rhousehold.svg?branch=master)](https://travis-ci.org/matobet/rhousehold)
 
 This project serves no actual purpose (*yet*).
 
