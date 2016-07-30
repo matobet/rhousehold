@@ -11,13 +11,17 @@ class User < ApplicationRecord
     format: { with: /@/ },
     length: { maximum: 255 }
 
+  validates :password,
+    presence: true,
+    length: { minimum: 6 }
+
   before_save do
     email.downcase!
   end
 
-  def self.new_admin
-    user = new
-    user.admin = true
-    user
+  has_secure_password
+
+  def self.new_admin **opts
+    new **opts, admin: true
   end
 end
