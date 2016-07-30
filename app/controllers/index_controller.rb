@@ -7,4 +7,8 @@ class IndexController < ApplicationController
     @admin = User.new_admin
     render 'init'
   end
+
+  def do_init
+
+  end
 end

@@ -21,6 +21,8 @@ body {
   background-color: rgb(244, 205, 140);
   color: rgb(21, 82, 101);
   padding: 10px;
+  font: 400 16px/1.6 'Open Sans', Verdana, Helvetica, sans-serif;
+  line-height: 20px
 }
 
 h1 {
@@ -30,10 +32,6 @@ h1 {
 
 h2 {
   font: 300 30px/1.2 'Bree Serif', Georgia, serif;
-}
-
-p {
-  font: 400 14px/1.6 'Open Sans', Verdana, Helvetica, sans-serif;
 }
 
 .jumbotron {
