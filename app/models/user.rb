@@ -13,6 +13,7 @@ class User < ApplicationRecord
 
   validates :password,
     presence: true,
+    confirmation: true,
     length: { minimum: 6 }
 
   before_save do
@@ -21,7 +22,13 @@ class User < ApplicationRecord
 
   has_secure_password
 
-  def self.new_admin **opts
-    new **opts, admin: true
+  def self.new_admin(opts = {})
+    opts[:admin] = true
+    new(opts)
+  end
+
+  def self.create_admin(opts = {})
+    opts[:admin] = true
+    create(opts)
   end
 end

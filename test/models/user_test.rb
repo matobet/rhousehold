@@ -9,9 +9,7 @@ class UserTest < ActiveSupport::TestCase
       password_confirmation: 'secure'
     )
     def @user.dup_with(fields)
-      duplicate = dup
-      duplicate.update_attributes fields
-      duplicate
+      dup.tap { |user| user.update_attributes(fields) }
     end
   end
 

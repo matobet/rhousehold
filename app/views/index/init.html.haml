@@ -6,26 +6,12 @@
       for your
       %strong household
     %p{style: 'margin-top: 30px'}
-      = form_for(@admin, url: init_path, html: { class: 'form-horizontal center' }) do |f|
-        .field.form-group
-          = f.label :name, class: 'col-sm-4 control-label'
-          .col-sm-6
-            = f.text_field :name, class: 'form-control'
+      = simple_form_for(@admin, url: init_path, html: { class: 'form-horizontal center' }) do |f|
+        = f.error_notification
 
-        .field.form-group
-          = f.label :email, class: 'col-sm-4 control-label'
-          .col-sm-6
-            = f.email_field :email, class: 'form-control'
+        = f.input :name, required: true, autofocus: true
+        = f.input :email, required: true
+        = f.input :password, required: true
+        = f.input :password_confirmation, required: true
 
-        .field.form-group
-          = f.label :password, class: 'col-sm-4 control-label'
-          .col-sm-6
-            = f.password_field :password, class: 'form-control'
-
-        .field.form-group
-          = f.label :password_confirmation, class: 'col-sm-4 control-label'
-          .col-sm-6
-            = f.password_field :password_confirmation, class: 'form-control'
-
-        .actions.form-group{style: 'margin-top: 30px; margin-bottom: -20px'}
-          = f.submit 'Create', class: 'btn btn-lg btn-block btn-primary'
+        = f.button :submit, 'Go!', class: 'btn-lg btn-block btn-primary'
