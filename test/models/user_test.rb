@@ -18,12 +18,12 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test 'should create admin user' do
-    user = User.new_admin
+    user = User.admins.new
     assert user.admin?
   end
 
   test 'should create admin user with name set' do
-    user = User.new_admin name: 'root'
+    user = User.admins.new name: 'root'
     assert_equal 'root', user.name
   end
 

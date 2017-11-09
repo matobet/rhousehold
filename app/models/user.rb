@@ -1,5 +1,7 @@
 class User < ApplicationRecord
 
+  scope :admins, -> { where(admin: true) }
+
   validates :name,
     presence: true,
     uniqueness: true,
@@ -16,19 +18,9 @@ class User < ApplicationRecord
     confirmation: true,
     length: { minimum: 6 }
 
-  before_save do
-    email.downcase!
-  end
-
   has_secure_password
 
-  def self.new_admin(opts = {})
-    opts[:admin] = true
-    new(opts)
-  end
-
-  def self.create_admin(opts = {})
-    opts[:admin] = true
-    create(opts)
+  before_save do
+    email.downcase!
   end
 end

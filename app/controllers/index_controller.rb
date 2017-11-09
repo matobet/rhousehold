@@ -4,13 +4,13 @@ class IndexController < ApplicationController
   end
 
   def init
-    @admin = User.new_admin
+    @admin = User.admin.new
     render 'init'
   end
 
   def do_init
-    admin = User.create_admin(user_params)
-    
+    admin = User.admins.create(user_params)
+
   end
 
   def user_params
