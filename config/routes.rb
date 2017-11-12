@@ -3,4 +3,6 @@ Rails.application.routes.draw do
   root to: 'index#index'
   get '/init', to: 'index#init'
   post '/init', to: 'index#do_init'
+
+  get '/dashboard', to: 'dashboard#dashboard'
 end

@@ -25,7 +25,10 @@ gem 'autoprefixer-rails'
 gem 'turbolinks', '~> 5.x'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
+# Form builder helpers
 gem 'simple_form'
+# For support of JSON parsing of "true", "false" values (std lib can't do that)
+gem 'oj'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
@@ -56,6 +59,7 @@ group :development do
   gem 'stackprof'
   gem 'rack-mini-profiler'
   gem 'flamegraph'
+  gem 'rubocop'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
